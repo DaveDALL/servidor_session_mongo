@@ -50,11 +50,11 @@ app.use(session({
 
 Mediante el uso de express-handlebars, se realizaran todas las vista:
 
-    - Login (se usa formulario con método POST hacia el endpoint de /authLogin, que verifica si el usuario está registrado en la base de datos)
+- Login (se usa formulario con método POST hacia el endpoint de /authLogin, que verifica si el usuario está registrado en la base de datos)
     
-    - Registro de usuario (de igual forma se usa un formulario con método POST hacia el endpoint de /authRegistration, donde se hace el registro de usuario hacia la base de datos)
+- Registro de usuario (de igual forma se usa un formulario con método POST hacia el endpoint de /authRegistration, donde se hace el registro de usuario hacia la base de datos)
     
-    - Vista de productos (una vez que el usuario se auntentifica, se dirige a la vista de productos, donde aperece su nombre de usuario y el rol de usuario. Para el caso de que el administrador se autentifique, apareca con el rol de admin. El cado de que no haya un usuario en sesión, si se quiere saltar la autentificación escribiendo en la barra del navegador el enlace hacia la vista de productos http://localhost:8080/products, no podra acceder y lo redigirá hacia la vista de login). Esta vista realiza un fetch hacia el endpoint http://localhost:8080/api/products, mediante el método GET. Una vez obtenidos los productos, se realzia el render de la tarjetas de productos, y se agrega un boton para el logout (salir)
+- Vista de productos (una vez que el usuario se auntentifica, se dirige a la vista de productos, donde aperece su nombre de usuario y el rol de usuario. Para el caso de que el administrador se autentifique, apareca con el rol de admin. El cado de que no haya un usuario en sesión, si se quiere saltar la autentificación escribiendo en la barra del navegador el enlace hacia la vista de productos http://localhost:8080/products, no podra acceder y lo redigirá hacia la vista de login). Esta vista realiza un fetch hacia el endpoint http://localhost:8080/api/products, mediante el método GET. Una vez obtenidos los productos, se realzia el render de la tarjetas de productos, y se agrega un boton para el logout (salir)
 
 y mediante CSS y JAVASCRIPT, se hace el manejo de los elementos html, datos, request y fetch hacia los endpoints
 
