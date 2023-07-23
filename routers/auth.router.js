@@ -16,14 +16,14 @@ authRouter.post('/authRegistration', async (req, res) => {
         if(userName && lastName && userMail && userPassword) {
             let foundUser = await User.findOne({userMail: userMail})
             if(!foundUser) {
-                let createdUser = await User.create({
+                await User.create({
                     userName,
                     lastName,
                     userMail,
                     userPassword,
                     userRoll: 'usuario'
                 })
-                res.redirect(200, '/')
+                res.redirect('/')
             }else res.status(400).send('El usuario ya existe!!')
         }
     }catch(err) {
@@ -47,7 +47,7 @@ authRouter.post('/authLogin', async (req, res) => {
             req.session.lastName = foundUser.lastName || ' '
             req.session.userRoll = foundUser.userRoll
             res.redirect('/products')
-        }else res.status(401).send('Usuario no autorizado, verifque sus datos')
+        }else res.redirect('/')
     }catch(err) {
         console.log('No se pudo confirmar el usuario con mongoose ' + err)
     }

@@ -98,7 +98,7 @@ userName: {
 
 ```
 
-Un endpoint de login, que hace la interacción con la colección de users para buscar al usuario y con la colección sessions, para el almacenamiento de los datos del usuario mediante la persitencia en MongoDB. Una vez hecha la confirmación del usuario en la base de datos, se hace el direccionamiento hacia la vista de products
+Un endpoint de login, que hace la interacción con la colección de users para buscar al usuario y con la colección sessions, para el almacenamiento de los datos del usuario mediante la persitencia en MongoDB. Una vez hecha la confirmación del usuario en la base de datos, se hace el direccionamiento hacia la vista de products. Si se loguea el administrador se observa el rol de admin; ademas el admin esta hardcodeado en router de auth, por lo que no esta en la base de datos.
 
 3. Un router para el endpoint de products con el método GET, para descargar todos los productos de la base de datos en MongoDB. Mediante la vista de produtos se hace un fetch hacia este endpoint.
 
